@@ -20,3 +20,6 @@ To train policies in the traffic light control environment, first install follow
 ```
 python train_policy.py
 ```
+This results in the following curve.
+
+![alt text](ernie_example.png)

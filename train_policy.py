@@ -461,3 +461,21 @@ if __name__ == "__main__":
 		trainer.train_episodes(3, save_reward=True)
 		trainer.save()
 		trainer.eval(eval_dict=train_2x2, speed=35, perturb=True, perturb_size=1e-1)
+
+	for lam in [1e-4, 1e-3, 1e-2, 1e-1]:
+		for alpha in [1e-4, 1e-3, 1e-2, 1e-1]:
+			config.alg.perturb = True
+			config.alg.lam = lam
+			config.alg.perturb_alpha = alpha
+			for s in range(5):
+				torch.manual_seed(s)
+				np.random.seed(s)
+				random.seed(s)
+				
+				save_dir = "results/QCOMBO_adv{}{}{}".format(s, lam, alpha)
+				trainer = LightTrainer(alg=alg, N_ROWS=config.env.n_rows, N_COLUMNS=config.env.n_cols, config=config,
+				saving_dir=save_dir)
+				trainer.train_episodes(3, save_reward=True)
+				trainer.save()
+				trainer.eval(eval_dict=train_2x2, speed=35, perturb=True, perturb_size=1e-1)
+				

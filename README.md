@@ -23,3 +23,15 @@ python train_policy.py
 This results in the following curve.
 
 ![alt text](ernie_example.png)
+
+## Cite
+Please cite our paper if you use this code in your own work:
+
+```
+@article{bukharin2023robust,
+  title={Robust Multi-Agent Reinforcement Learning via Adversarial Regularization: Theoretical Foundation and Stable Algorithms},
+  author={Bukharin, Alexander and Li, Yan and Yu, Yue and Zhang, Qingru and Chen, Zhehui and Zuo, Simiao and Zhang, Chao and Zhang, Songan and Zhao, Tuo},
+  journal={arXiv preprint arXiv:2310.10810},
+  year={2023}
+}
+```
